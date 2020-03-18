@@ -42,16 +42,16 @@ class Motor_DC(Motor):
     def set_parameters(self, params):
         Motor.set_parameters(self, params)        
         
-        if params.has_key('Lf'):
+        if 'Lf' in params:
             self.Lf = params['Lf']
 
-        if params.has_key('Rf'):
+        if 'Rf' in params:
             self.LRf = params['Rf']
 
-        if params.has_key('Ra'):
+        if 'Ra' in params:
             self.Ra = params['Ra']
             
-        if params.has_key('Ke'):
+        if 'Ke' in params:
             self.Ke = params['Ke']
 
         return

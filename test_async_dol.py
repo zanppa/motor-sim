@@ -94,3 +94,5 @@ ax3.legend()
 #ax5.plot(time, Pos[0], label="Act. rotor pos")
 #ax5.plot(time, Pos[1], label="Est. rotor pos")
 #ax5.legend()
+
+plt.show()

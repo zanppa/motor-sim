@@ -69,26 +69,26 @@ class Control_BLDC_Hall(Control):
         return
 
     def set_parameters(self, params):
-        if params.has_key('Kp'):
+        if 'kp' in params:
             self.Kp = params['Kp']
 
-        if params.has_key('Ki'):
+        if 'Ki' in params:
             self.Ti = self.Kp / params['Ki']
 
-        if params.has_key('Ti'):
+        if 'Ti' in params:
             self.Ti = params['Ti']
 
-        if params.has_key('Imax'):
+        if 'Imax' in params:
             self.intmax = params['Imax']
                         
-        if params.has_key('P'):
+        if 'P' in params:
             self.P = params['P']
 
-        if params.has_key('Umax'):
+        if 'Umax' in params:
             self.Umax = params['Umax']
 
 
-        if params.has_key('Sf'):
+        if 'Sf' in params:
             self.Sf = params['Sf']
 
         return
@@ -112,7 +112,7 @@ class Control_BLDC_Hall(Control):
     def set_motor(self, motor):
         
         if motor.get_config_word('Name') != 'BLDC':
-            print 'Motor type not BLDC'
+            print('Motor type not BLDC')
             return False
         
         Control.set_motor(self, motor)

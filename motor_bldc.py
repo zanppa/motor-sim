@@ -46,19 +46,19 @@ class Motor_BLDC(Motor):
     def set_parameters(self, params):
         Motor.set_parameters(self, params)        
         
-        if params.has_key('P'):
+        if 'P' in params:
             self.P = params['P']
 
-        if params.has_key('Ld'):
+        if 'Ld' in params:
             self.Ld = params['Ld']
 
-        if params.has_key('Lq'):
+        if 'Lq' in params:
             self.Lq = params['Lq']
 
-        if params.has_key('R'):
+        if 'R' in params:
             self.R = params['R']
             
-        if params.has_key('Ke'):
+        if 'Ke' in params:
             self.Ke = params['Ke']
         
         return
@@ -113,7 +113,7 @@ class Motor_BLDC(Motor):
                 nact += 1.0
                 self.Vcommon += self.Vin[n]
 
-        if nact <> 0.0:
+        if nact != 0.0:
             self.Vcommon /= nact
 
         # Calculate effect of phases

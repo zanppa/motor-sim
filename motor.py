@@ -39,16 +39,16 @@ class Motor:
         return
 
     def set_parameters(self, params):
-        if params.has_key('J'):
+        if 'J' in params:
             self.J = params['J']
 
-        if params.has_key('F'):
+        if 'F' in params:
             self.F = params['F']
 
-        if params.has_key('V0'):
+        if 'V0' in params:
             self.Omega = params['V0']
                         
-        if params.has_key('T0'):
+        if 'T0' in params:
             self.Theta = params['T0']
         
         return
@@ -58,7 +58,7 @@ class Motor:
         return self.config
 
     def get_config_word(self, confword):
-        if self.config.has_key(confword):
+        if confword in self.config:
             return self.config[confword]
 
         return 0

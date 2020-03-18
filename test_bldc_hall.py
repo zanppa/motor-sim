@@ -115,3 +115,5 @@ ax5.plot(time, Uout[1], label="Uout B")
 ax5.plot(time, Uout[2], label="Uout C")
 ax5.plot(time, Uout[3], label="Uout mag")
 ax5.legend()
+
+plt.show()

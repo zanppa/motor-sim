@@ -476,35 +476,35 @@ class Control_BLDC_FOC(Control):
 
 
     def set_parameters(self, params):
-        if params.has_key('Kp'):
+        if 'Kp' in params:
             self.Kp = params['Kp']
 
-        if params.has_key('Ki'):
+        if 'Ki' in params:
             self.Ti = self.Kp / params['Ki']
 
-        if params.has_key('Ti'):
+        if 'Ti' in params:
             self.Ti = params['Ti']
 
-        if params.has_key('Kpt'):
+        if 'Kpt' in params:
             self.Kpt = params['Kpt']
 
-        if params.has_key('Kit'):
+        if 'Kit' in params:
             self.Tit = self.Kpt / params['Kit']
 
-        if params.has_key('Tit'):
+        if 'Tit' in params:
             self.Tit = params['Tit']
             
-        if params.has_key('P'):
+        if 'P' in params:
             self.P = params['P']
 
-        if params.has_key('Umax'):
+        if 'Umax' in params:
             self.Umax = params['Umax']
 
-        if params.has_key('Ts'):
+        if 'Ts' in params:
             self.Ts = params['Ts']
 
         # Motor model selection
-        if params.has_key('Model'):
+        if 'Model' in params:
             mod = params['Model']
             if mod == 'BLDC_Slide':
                 self.model = Model_BLDC_Slide(self.Ts)
@@ -513,7 +513,7 @@ class Control_BLDC_FOC(Control):
             elif mod == 'BLDC_PI':
                 self.model = Model_BLDC_PI(self.Ts)
             else:
-                print 'Unknown motor model, using default (Slide)'
+                print('Unknown motor model, using default (Slide)')
 
         # Update model run period
         self.model.Ts = self.Ts
@@ -557,7 +557,7 @@ class Control_BLDC_FOC(Control):
     def set_motor(self, motor):
         
         if motor.get_config_word('Name') != 'BLDC':
-            print 'Motor type not BLDC'
+            print('Motor type not BLDC')
             return False
         
         Control.set_motor(self, motor)

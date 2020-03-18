@@ -42,13 +42,13 @@ class Motor_PMDC(Motor):
     def set_parameters(self, params):
         Motor.set_parameters(self, params)
 
-        if params.has_key('L'):
+        if 'L' in params:
             self.L = params['L']
 
-        if params.has_key('R'):
+        if 'R' in params:
             self.R = params['R']
             
-        if params.has_key('Ke'):
+        if 'Ke' in params:
             self.Ke = params['Ke']
         
         return

@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 """
 3-phase asynchronous motor
 Using the T model
@@ -86,22 +86,22 @@ class Motor_Async(Motor):
     def set_parameters(self, params):
         Motor.set_parameters(self, params)        
         
-        if params.has_key('P'):
+        if 'P' in params:
             self.P = params['P']
 
-        if params.has_key('Ls'):
+        if 'Ls' in params.:
             self.Ls = params['Ls']
 
-        if params.has_key('Rs'):
+        if 'Rs' in params:
             self.Rs = params['rs']
 
-        if params.has_key('Rr'):
+        if 'Rr' in params:
             self.Rr = params['Rr']
             
-        if params.has_key('Lr'):
+        if 'Lr' in params:
             self.Lr = params['Lr']
 
-        if params.has_key('Lm'):
+        if 'Lm' in params:
             self.Lm = params['Lm']
         
         return
